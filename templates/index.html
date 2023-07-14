@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Heart Stroke Prediction</title>
+        <link type='text/css' rel="stylesheet" href="{{ url_for('static', filename='stylesheets/index.css') }}">
+    </head>
+    <body>
+        <h3>Heart Stroke Prediction</h3>
+
+        <div class = "input-form">
+        <form action="/" method="POST" enctype="multipart/form-data">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+                <option value="-1">-- Select an Option --</option>
+                <option value="0">Female</option>
+                <option value="1">Male</option>
+                <option value="2">Other</option>
+            </select>
+            <br>
+            <label for="age">Age</label>
+            <input type="number" id="age" name="age" placeholder="eg: 21">
+            <br>
+            <label for="hypertension">Hypertension</label>
+            <select id="hypertension" name="hypertension">
+                <option value="-1">-- Select an Option --</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+            <br>
+            <label for="heartdisease">Heart Disease</label>
+            <select id="heartdisease" name="heartdisease">
+                <option value="-1">-- Select an Option --</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+            </select>
+            <br>
+            <label for="martial_stat">Marital Status</label>
+            <select id="martial_stat" name="martial_stat">
+                <option value="-1">-- Select an Option --</option>
+                <option value="1">Yes</option>
+                <option value="0">No</option>
+            </select>
+            <br>
+            <label for="work_type">Work Type</label>
+            <select id="work_type" name="work_type">
+                <option value="-1">-- Select an Option --</option>
+                <option value="0">Govt Job</option>
+                <option value="1">Never Worked</option>
+                <option value="2">Private</option>
+                <option value="3">Self Employed</option>
+                <option value="4">Children</option>
+            </select>
+            <br>
+            <label for="residence">Residence Type</label>
+            
+            <select id="residence" name="residence">
+                <option value="-1">-- Select an Option --</option>
+                <option value="0">Rural</option>
+                <option value="1">Urban</option>
+            </select>
+            <br>
+            <label for="avg">Avg Glucouse Level</label>
+            <input type="number" step = "0.01" id="avg" name="avg" placeholder="eg: 228.69">
+            <br>
+            <label for="bmi">BMI</label>
+            <input type="number" step = "0.01" id="bmi" name="bmi" placeholder="eg: 36.6">
+            <br>
+            
+            <label for="smoking">Smoking Status</label>
+            <select id="smoking" name="smoking">
+                <option value="-1">-- Select an Option --</option>
+                <option value="0">Unknown</option>
+                <option value="1">Formely Smoked</option>
+                <option value="2">Never Smoked</option>
+                <option value="3">Smokes</option>
+            </select>
+            <!-- ................. -->
+            <br>
+            <input type="submit" value="Submit">
+        </form>
+        </div>
+        {% if prediction %}
+            <h1>Result: {{prediction}}</h1>
+        {% endif %}
+    </body>
+</html>
